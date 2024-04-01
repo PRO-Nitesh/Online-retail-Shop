@@ -10,11 +10,14 @@ import { ToastService } from '../toast.service';
 })
 export class CartComponent implements OnInit {
   cartItems: any = [];
+  searchResults: any;
+  cart: any;
+  cartItemRemoved: any;
 
   constructor(
     private cartService: CartService,
     private https: HttpClient,
-    private toastService: ToastService // Inject ToastService here
+    private toastService: ToastService
   ) {
     this.cartItems = this.cartService.getCartItems();
     console.log(this.cartItems);
@@ -26,26 +29,27 @@ export class CartComponent implements OnInit {
   }
   removeFromCart(item: any) {
     this.cartService.removeFromCart(item);
-    this.toastService.show('Product removed from cart.'); // Use toastService here
+    alert('The items has been removed form the shopping cart.');
+    window.location.reload();
   }
 
   purchaseItem(item: any) {
-    // console.log('Item purchased:', item);
-    // this.toastService.show('Product purchased.'); // Use toastService here
-    alert('You have purchased the items.');
+    console.log(item);
     this.https
-      .post(
-        // 'https://uiexercise.theproindia.com/api/Order/AddOrder',
-        'http://localhost:43228/api/Order/PostOrder',
-        {
-          CustomerId: '457b5ccc-1ec5-49b3-a849-08dc44a922b3',
-          ProductId: item.productID,
-          Quantity: item.quantity,
+      .post('http://localhost:43228/api/Order/PostOrder', {
+        customerId: '4f184652-ce69-4696-8cd6-d88cf607f103',
+        productID: item.productID,
+        quantity: item.quantity,
+      })
+      .subscribe(
+        (res) => {
+          console.log(res);
+          alert('Your purchase has been successful.');
+        },
+        (err) => {
+          console.log(err);
         }
-      )
-      .subscribe((res) => {
-        console.log(res);
-      });
+      );
 
     this.cartService.removeFromCart(item);
   }

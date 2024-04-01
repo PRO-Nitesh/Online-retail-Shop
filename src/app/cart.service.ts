@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
+  [x: string]: any;
   private cart: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   cart$ = this.cart.asObservable();
 
   constructor() {
-    // Retrieve cart items from local storage on service initialization
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
       this.cart.next(JSON.parse(storedCart));
@@ -18,20 +18,18 @@ export class CartService {
 
   addToCart(product: any, quantity: number) {
     const currentCart = this.cart.getValue();
-    const productIndex = currentCart.findIndex(p => p.productID === product.ProductID);
+    const productIndex = currentCart.findIndex(
+      (p) => p.productID === product.productID
+    );
 
     if (productIndex !== -1) {
-      // If product already exists in cart, update its quantity
-      currentCart[productIndex].Quantity += quantity;
+      currentCart[productIndex].quantity += quantity;
     } else {
-      // If product is not in cart, add it with the specified quantity
-      currentCart.push({ ...product, Quantity: quantity });
+      currentCart.push({ ...product, quantity: quantity });
     }
 
-    // Update the cart BehaviorSubject with the modified cart
     this.cart.next(currentCart);
 
-    // Update local storage with the updated cart
     localStorage.setItem('cart', JSON.stringify(currentCart));
   }
 
@@ -39,10 +37,8 @@ export class CartService {
     const currentCart = this.cart.getValue();
     currentCart.splice(index, 1);
 
-    // Update the cart BehaviorSubject with the modified cart
     this.cart.next(currentCart);
 
-    // Update local storage with the updated cart
     localStorage.setItem('cart', JSON.stringify(currentCart));
   }
 

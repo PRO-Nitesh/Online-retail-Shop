@@ -1,10 +1,10 @@
 <div class="cart-container">
-    <h2 style="font-family: 'Arial', sans-serif;">Shopping Cart</h2>
+    <h2 class="cartShoping">Shopping Cart</h2>
     <div class="cart-items-grid">
         <div class="cart-item" *ngFor="let item of cartItems">
             <div>
                 <span>{{ item.productName }}</span> :
-                <span>{{ item.Quantity}}</span>
+                <span>{{ item.quantity}}</span>
             </div>
             <div>
                 <button (click)="removeFromCart(item)">Remove</button>

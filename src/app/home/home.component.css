@@ -7,16 +7,19 @@ body {
 .welcome-message {
   text-align: center;
   margin-top: 50px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 21px;
 }
 
 .welcome-message h1 {
-  font-family:  'Verdana', sans-serif;
+  font-family: "Verdana", sans-serif;
   font-size: 36px;
   color: #390552;
   margin: 0;
 }
 
 .topnav {
+  font-family: "Times New Roman", Times, serif;
   overflow: hidden;
   background-color: #390552;
   text-align: center;

@@ -6,9 +6,9 @@
 
 .search-container form {
   display: grid;
-  grid-template-columns: 1fr auto; /* Adjusted grid-template-columns */
-  gap: 20px; /* Reduced the gap */
-  padding: 20px; /* Increased padding for better spacing */
+  grid-template-columns: 1fr auto; 
+  gap: 20px; 
+  padding: 20px; 
   border: 2px solid #A1CDF4;
   border-radius: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,7 +19,7 @@
   padding: 10px;
   border: none;
   font-size: 16px;
-  width: 100%; /* Changed width to 100% for responsiveness */
+  width: 100%; 
 }
 
 .search-container button {
@@ -40,22 +40,22 @@
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centered content */
-  padding: 20px; /* Adjusted padding */
+  justify-content: center; 
+  padding: 20px; 
   margin-top: 20px;
 }
 .product-list li {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align content horizontally */
-  justify-content: center; /* Center align content vertically */
+  align-items: center;
+  justify-content: center; 
   padding: 30px;
   border-radius: 50px;
   background-color: #A1CDF4;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s;
-  text-align: center; /* Center align text */
-  margin: 10px; /* Added margin for spacing between items */
+  text-align: center; 
+  margin: 10px; 
 }
 
 .product-list li:hover {

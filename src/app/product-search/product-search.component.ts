@@ -5,50 +5,54 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
-  styleUrls: ['./product-search.component.css']
+  styleUrls: ['./product-search.component.css'],
 })
 export class ProductSearchComponent {
   searchQuery: string = '';
   searchResults: any[] = [];
-  constructor(private http: HttpClient, private cartService: CartService, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private cartService: CartService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     this.getProduct();
   }
-  readonly apiUrl = 
-  // 'https://uiexercise.theproindia.com/api/Product/GetAllProduct';
-  "http://localhost:43228/api/Product/GetProducts";
-  products: any[] = []; 
+  readonly apiUrl =
+    'http://localhost:43228/api/Product/GetProducts';
+  products: any[] = [];
   searchProducts() {
-    this.searchResults=this.products.filter(item=>{
-      return item.productName?.toLowerCase().includes(this.searchQuery.toLowerCase()) ;
-    })
+    this.searchResults = this.products.filter((item) => {
+      return item.productName
+        ?.toLowerCase()
+        .includes(this.searchQuery.toLowerCase());
+    });
   }
-  getProduct(){
-    
-          this.http.get<any[]>(this.apiUrl).subscribe((res) => {
-            this.products = res;
-            this.searchResults=res;
-          })
-        
-      }
-  
+  getProduct() {
+    this.http.get<any[]>(this.apiUrl).subscribe((res) => {
+      this.products = res;
+      this.searchResults = res;
+    });
+  }
 
   addToCart(product: any) {
-    const quantityToAdd = prompt(`Enter the quantity for ${product.productName}:`, '1');
+    const quantityToAdd = prompt(
+      `Enter the quantity for ${product.productName}:`,
+      '1'
+    );
     const quantity = Number(quantityToAdd);
 
     if (quantity <= 0 || isNaN(quantity)) {
       alert('Invalid quantity.');
       return;
     }
-    
+
     if (product.quantity >= quantity) {
       this.cartService.addToCart(product, quantity);
       alert('Product added to cart successfully.');
-      this.router.navigate(['/cart']);
+      this.router.navigate(['/Cart']);
     } else {
       alert('Not enough stock available.');
     }
   }
 }
-
