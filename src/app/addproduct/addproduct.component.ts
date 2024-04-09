@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddproductComponent {
   readonly addlink=
-  // "https://uiexercise.theproindia.com/api/Product/AddProduct";
   "http://localhost:43228/api/Product/PostProduct";
   constructor(private https:HttpClient){}
   products: {

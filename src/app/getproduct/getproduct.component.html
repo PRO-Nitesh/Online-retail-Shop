@@ -1,8 +1,10 @@
- <div class="product-container">
-  <button (click)="getProduct()" class="get-products-button">Get Products</button>
-   <div class="product-grid" *ngIf="products && products.length > 0">
+<div class="product-container">
+  <button (click)="getProduct()" class="get-products-button">
+    Get Products
+  </button>
+  <div class="product-grid" *ngIf="products && products.length > 0">
     <div class="product-card" *ngFor="let product of products">
-      <p>Product ID: {{ product.productID }}</p>
+      <p>Product ID: {{ product.productId }}</p>
       <p>Product Name: {{ product.productName }}</p>
       <p>Quantity: {{ product.quantity }}</p>
     </div>
