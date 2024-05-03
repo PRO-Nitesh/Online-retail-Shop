@@ -16,7 +16,6 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { HomeComponent } from './home/home.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { CartComponent } from './cart/cart.component';
-import { ToastComponent } from './toast/toast.component';
 
 const appRoute: Routes = [
   {
@@ -39,10 +38,11 @@ const appRoute: Routes = [
   {
     path: 'search',
     component: ProductSearchComponent,
-  },{
-    path: "Cart",
+  },
+  {
+    path: 'Cart',
     component: CartComponent,
-  }
+  },
 ];
 
 @NgModule({
@@ -53,7 +53,6 @@ const appRoute: Routes = [
     HomeComponent,
     ProductSearchComponent,
     CartComponent,
-    ToastComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [provideRouter(appRoute, withComponentInputBinding())],

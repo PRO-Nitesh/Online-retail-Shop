@@ -1,17 +1,14 @@
 <div class="background-container">
-    <div class="form-container">
-        <form #ProductForm="ngForm" (ngSubmit)="addproduct(ProductForm.value)">
-        
-                <legend>Add Product Details</legend>
-                <label>Product name</label>
-                <input type="text" name="Pname" ngModel>
+  <div class="form-container">
+    <form #ProductForm="ngForm" (ngSubmit)="addproduct(ProductForm.value)">
+      <legend>Add Product Details</legend>
+      <label>Product name</label>
+      <input type="text" name="ProductName" ngModel />
 
-                <label>Product quantity</label>
-                <input type="number" name="Pquan" ngModel>
+      <label>Product quantity</label>
+      <input type="number" name="ProductQuantity" ngModel />
 
-                <button id="addProductBtn" type="submit">Add Product</button>
-           
-        </form>
-    </div>
-</div> 
-
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
+</div>

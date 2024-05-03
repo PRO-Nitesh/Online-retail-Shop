@@ -1,17 +1,18 @@
-/* Reset default browser styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Styling for form container */
 .background-container {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #f4f4f4;
+  background-image: url("./background-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
 }
 
 .form-container {
@@ -22,24 +23,9 @@
   width: 300px;
 }
 
-/* Styling for form */
 form {
   display: flex;
   flex-direction: column;
-}
-
-/* Styling for form elements */
-label {
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-input[type="text"],
-input[type="number"] {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 button[type="submit"] {
@@ -51,23 +37,19 @@ button[type="submit"] {
   padding: 12px;
 }
 
-button[type="submit"]:hover {
-  background-color: #0056b3;
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
+input[type="number"],
+input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
 
-/* .background-container {
-  background-image: url('./background-image.jpg');
- 
-  background-size: cover; 
-  background-repeat: no-repeat;
-  background-color: #3a1212;
-} */
-
-.background-container {
-  background-image: url('./background-image.png');
-  background-size: cover; 
-  background-repeat: no-repeat;
-  background-color: #3a1212;
-  /* Adjust the percentage to make it dimmer */
+button[type="submit"]:hover {
+  background-color: #0056b3;
 }

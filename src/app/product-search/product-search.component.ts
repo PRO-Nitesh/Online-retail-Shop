@@ -18,8 +18,7 @@ export class ProductSearchComponent {
   ngOnInit(): void {
     this.getProduct();
   }
-  readonly apiUrl =
-    'http://localhost:43228/api/Product/GetProducts';
+  readonly apiUrl = 'https://localhost:7194/api/Product/Getproduct';
   products: any[] = [];
   searchProducts() {
     this.searchResults = this.products.filter((item) => {

@@ -23,10 +23,7 @@ export class CartComponent implements OnInit {
     console.log(this.cartItems);
   }
 
-  ngOnInit(): void {
-    // This method is called once the component is initialized
-    // You can perform initialization tasks here if needed
-  }
+  ngOnInit(): void {}
   removeFromCart(item: any) {
     this.cartService.removeFromCart(item);
     alert('The items has been removed form the shopping cart.');
@@ -36,9 +33,9 @@ export class CartComponent implements OnInit {
   purchaseItem(item: any) {
     console.log(item);
     this.https
-      .post('http://localhost:43228/api/Order/PostOrder', {
+      .post('https://localhost:44383/api/Order/Postorder', {
         customerId: '4f184652-ce69-4696-8cd6-d88cf607f103',
-        productID: item.productID,
+        productId: item.productId,
         quantity: item.quantity,
       })
       .subscribe(

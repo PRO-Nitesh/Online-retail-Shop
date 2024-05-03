@@ -1,37 +1,17 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-.welcome-message {
-  text-align: center;
-  margin-top: 50px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 21px;
-}
-
-.welcome-message h1 {
-  font-family: "Verdana", sans-serif;
-  font-size: 36px;
-  color: #390552;
-  margin: 0;
-}
-
 .topnav {
+  background-color: #390552;
   font-family: "Times New Roman", Times, serif;
   overflow: hidden;
-  background-color: #390552;
   text-align: center;
 }
 
 .topnav a {
-  display: inline-block;
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
+  display: inline-block;
   font-size: 20px;
+  padding: 14px 20px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .topnav a:hover {
@@ -40,4 +20,24 @@ body {
 
 .topnav a.active {
   background-color: #6a0572;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-message {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 21px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.welcome-message h1 {
+  color: #390552;
+  font-family: "Verdana", sans-serif;
+  font-size: 36px;
+  margin: 0;
 }

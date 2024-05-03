@@ -1,11 +1,17 @@
-   <div class="search-container">
+<div class="search-container">
   <form (submit)="searchProducts()">
-    <input type="text" (input)="searchProducts()" placeholder="Search for products..." [(ngModel)]="searchQuery" name="pname">
+    <input
+      type="text"
+      (input)="searchProducts()"
+      placeholder="Search for products..."
+      [(ngModel)]="searchQuery"
+      name="ProductName"
+    />
     <button type="submit">Search</button>
   </form>
   <ul class="product-list">
     <li *ngFor="let product of searchResults">
-      <div class="product-details">
+      <div>
         <p><span>Name: </span>{{ product.productName }}</p>
         <p><span>Quantity: </span>{{ product.quantity }}</p>
       </div>
@@ -13,11 +19,3 @@
     </li>
   </ul>
 </div>
-
-
-
-
-
-
-
-

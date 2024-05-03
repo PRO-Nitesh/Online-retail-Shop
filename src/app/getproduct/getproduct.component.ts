@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './getproduct.component.css',
 })
 export class GetproductComponent {
-  readonly getk = 'https://localhost:44383/api/Product/Getproduct';
+  readonly getk = 'https://localhost:7194/api/Product/Getproduct';
   products: any;
   constructor(private https: HttpClient) {}
   getProduct() {

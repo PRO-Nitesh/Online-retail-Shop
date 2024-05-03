@@ -7,32 +7,29 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './addproduct.component.css',
 })
 export class AddproductComponent {
-  readonly addlink=
-  "http://localhost:43228/api/Product/PostProduct";
-  constructor(private https:HttpClient){}
+  readonly addlink = 'https://localhost:7194/api/Product';
+  constructor(private https: HttpClient) {}
   products: {
-    productID?: string;
+    productId?: string;
     productName: string;
     quantity: number;
     isActive: boolean;
-} = {
-  productID: '',
-  productName: '',
-  quantity: 0,
-  isActive: false
-};
-  addproduct(pro:{Pname:string,Pquan:number}){
-    this.products={
-    
-      productName:pro.Pname,
-      quantity:pro.Pquan,
-      isActive:true
-    }
-    this.https.post(this.addlink,this.products).subscribe((res)=>{
+  } = {
+    productId: '',
+    productName: '',
+    quantity: 0,
+    isActive: false,
+  };
+  addproduct(pro: { ProductName: string; ProductQuantity: number }) {
+    this.products = {
+      productName: pro.ProductName,
+      quantity: pro.ProductQuantity,
+      isActive: true,
+    };
+    this.https.post(this.addlink, this.products).subscribe((res) => {
       console.log(res);
-    })
+    });
 
-    alert("Product has been added!");
+    alert('Product has been added!');
   }
 }
-
