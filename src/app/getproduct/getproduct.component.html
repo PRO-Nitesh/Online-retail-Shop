@@ -4,9 +4,9 @@
   </button>
   <div *ngIf="products && products.length > 0">
     <div class="product-card" *ngFor="let product of products">
-      <p>Product ID: {{ product.productId }}</p>
-      <p>Product Name: {{ product.productName }}</p>
-      <p>Quantity: {{ product.quantity }}</p>
+      <label>Product ID: {{ product.productId }}</label>
+      <label>Product Name: {{ product.productName }}</label>
+      <label>Quantity: {{ product.quantity }}</label>
     </div>
   </div>
 </div>
