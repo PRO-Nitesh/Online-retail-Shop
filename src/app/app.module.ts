@@ -36,7 +36,7 @@ const appRoute: Routes = [
     component: AddproductComponent,
   },
   {
-    path: 'search',
+    path: 'Search',
     component: ProductSearchComponent,
   },
   {
