@@ -12,8 +12,9 @@
   <ul class="product-list">
     <li *ngFor="let product of searchResults">
       <div>
-        <p><span>Name: </span>{{ product.productName }}</p>
-        <p><span>Quantity: </span>{{ product.quantity }}</p>
+        <label><span>Name: </span>{{ product.productName }}</label
+        ><br />
+        <label><span>Quantity: </span>{{ product.quantity }}</label>
       </div>
       <button (click)="addToCart(product)">Add to Cart</button>
     </li>
